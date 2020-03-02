@@ -30,30 +30,44 @@ var gameIsWon = function() {
   }
 };
 
+var gameIsTied = function() {
+  if (xCount === 9) {
+    return true;
+  }
+};
+
 var makeMove = function(htmlContents , id) {
-    // if square not already clicked
-    if (!htmlContents) {
-      console.log('valid move');
+    if (!gameIsWon() && !gameIsTied()) {
+
       var el = document.getElementById(id);
-      // if number of x % 2 === 0
-      if (xCount % 2 === 0) {
-        // add an X where clicked and update board
-        el.innerHTML = "X";
-        board[Number(id)] = "X";
+      // if square not already clicked
+      if (!htmlContents && !gameIsWon()) {
+        console.log('valid move');
+        // if number of x % 2 === 0
+        if (xCount % 2 === 0) {
+          // add an X where clicked and update board
+          el.innerHTML = "X";
+          board[Number(id)] = "X";
+        } else {
+          // add a O where clicked and update board
+          el.innerHTML = "O";
+          board[Number(id)] = "O";
+        }
+        // increment xCount
+        xCount++;
       } else {
-        // add a O where clicked and update board
-        el.innerHTML = "O";
-        board[Number(id)] = "O";
+        console.log('please play a move on an available sqaure!');
       }
-      // increment xCount
-      xCount++;
-    } else {
-      console.log('please play a move on an available sqaure!');
+
+      mapBoardToMatrix();
+      if (gameIsWon()) {
+        setTimeout(function() { alert(`Game over! ${el.innerHTML} is the winner!`); }, 500);
+      } else if (gameIsTied()) {
+        setTimeout(function() { alert(`Tie Game`); }, 500);
+      }
+
     }
-    mapBoardToMatrix();
-    if (gameIsWon()) {
-      console.log('game over');
-    }
+
 };
 
 var resetGame = function() {
