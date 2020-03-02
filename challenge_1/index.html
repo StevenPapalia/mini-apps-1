@@ -1,2 +1,31 @@
-
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = "utf-8">
+    <title>Tic Tac Toe</title>
+    <link rel="styles" type="text/css" href="./styles.css"></link>
+  </head>
+  <body>
+    <h1>Tic Tac Toe</h1>
+    <h3>Click a square to make the first move!</h3>
+    <table>
+      <tr>
+        <td><button class="square" id="squareZero" onclick="makeMove(this.innerHTML, this.id)"></button></td>
+        <td><button class="square" id="squareOne" onclick="makeMove(this.innerHTML, this.id)">A</button></td>
+        <td><button class="square" id="squareTwo" onclick="makeMove(this.innerHTML, this.id)">B</button></td>
+      </tr>
+      <tr>
+        <td><button class="square" id="squareThree" onclick="makeMove(this.innerHTML, this.id)">C</button></td>
+        <td><button class="square" id="squareFour" onclick="makeMove(this.innerHTML, this.id)">L</button></td>
+        <td><button class="square" id="squareFive" onclick="makeMove(this.innerHTML, this.id)"></button></td>
+      </tr>
+      <tr>
+        <td><button class="square" id="squareSix" onclick="makeMove(this.innerHTML, this.id)"></button></td>
+        <td><button class="square" id="squareSeven" onclick="makeMove(this.innerHTML, this.id)"></button></td>
+        <td><button class="square" id="squareEight" onclick="makeMove(this.innerHTML, this.id)"></button></td>
+      </tr>
+    </table><br>
+    <button>Reset game</button>
+    <script src="./app.js"></script>
+  </body>
+</html>
