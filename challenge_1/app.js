@@ -1,4 +1,4 @@
-var squares = document.getElementsByClassName('square');
+// var squares = document.getElementsByClassName('square');
 
 // var rowOne =[];
 // var rowTwo = [];
@@ -15,11 +15,11 @@ var squares = document.getElementsByClassName('square');
 // var board = [rowOne, rowTwo, rowThree];
 // console.log(board);
 
-var board = [];
-for (var i = 0; i < squares.length; i++) {
-    board.push(squares[i].innerHTML);
-}
-console.log(board);
+// var board = [];
+// for (var i = 0; i < squares.length; i++) {
+//     board.push(squares[i].innerHTML);
+// }
+// console.log(board);
 
 var xCount = 0;
 
@@ -41,8 +41,14 @@ var makeMove = function(htmlContents , id) {
     } else {
       console.log('please play a move on an available sqaure!');
     }
-
-
   // update board
+};
+
+var resetGame = function() {
+  // set all squares value to ""
+  var squares = document.getElementsByClassName('square');
+  for (var i = 0; i < squares.length; i++) {
+    squares[i].innerHTML = "";
+  }
 };
 
