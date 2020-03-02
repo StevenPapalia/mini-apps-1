@@ -9,23 +9,23 @@ var mapBoardToMatrix = function() {
 };
 
 var gameIsWon = function() {
-  // check if any row has 3 in a row and that it is not 3 blanks
+  // check if any row has 3 in a row
   for (var i = 0; i < 3; i++) {
-    if (matrix[i][0] === 'X' && matrix[i][1] === 'X' && matrix[i][2] === 'X' || matrix[i][0] === 'O' && matrix[i][1] === 'O' && matrix[i][2] === 'O') {
+    if (matrix[i][0] === matrix[i][1] && matrix[i][0] === matrix[i][2] && matrix[i][0]) {
       return true;
     }
   }
   // check if any column has 3 in a row
   for (var i = 0; i < 3; i++) {
-    if (matrix[0][i] === 'X' && matrix[1][i] === 'X' && matrix[2][i] === 'X' || matrix[0][i] === 'O' && matrix[1][i] === 'O' && matrix[2][i] === 'O') {
+    if (matrix[0][i] === matrix[1][i] && matrix[0][i] === matrix[2][i] && matrix[0][i]) {
       return true;
     }
   }
   // check if any diagonal has 3 in a row
-  if (matrix[0][0] === 'X' && matrix[1][1] === 'X' && matrix[2][2] === 'X' || matrix[0][0] === 'O' && matrix[1][1] === 'O' && matrix[2][2] === 'O') {
+  if (matrix[0][0] === matrix[1][1] && matrix[0][0] === matrix[2][2] && matrix[0][0]) {
     return true;
   }
-  if (matrix[0][2] === 'X' && matrix[1][1] === 'X' && matrix[2][0] === 'X' || matrix[0][2] === 'O' && matrix[1][1] === 'O' && matrix[2][0] === 'O') {
+  if (matrix[0][2] === matrix[1][1] && matrix[0][2] === matrix[2][0] && matrix[0][2]) {
     return true;
   }
 };
