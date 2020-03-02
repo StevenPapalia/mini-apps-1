@@ -25,15 +25,19 @@ var xCount = 0;
 
 var makeMove = function(htmlContents , id) {
     // if square not already clicked
-    if (htmlContents) {
+    if (!htmlContents) {
       console.log('valid move');
+      var el = document.getElementById(id);
       // if number of x % 2 === 0
       if (xCount % 2 === 0) {
         // add an X where clicked
-        console.log(htmlContents, id);
-      }
-      // else
+        el.innerHTML = "X";
+      } else {
         // add a O where clicked
+        el.innerHTML = "O";
+      }
+      // increment xCount
+      xCount++;
     } else {
       console.log('please play a move on an available sqaure!');
     }
