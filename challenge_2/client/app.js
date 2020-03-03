@@ -6,8 +6,9 @@ document.getElementById("button").onclick = function sendJSONandGetCSV() {
   var xhr = new XMLHttpRequest();
 
   xhr.open("POST", '../converter', true);
+  xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
-  xhr.send({ text: text} );
+  xhr.send(JSON.stringify(text));
 
   xhr.onload = function() {
     if (xhr.status !== 200) { // analyze HTTP status of the response

@@ -7,7 +7,12 @@ var bodyParser = require('body-parser')
 var jsonParser = bodyParser.json();
 
 app.post('/converter', jsonParser, (req, res) => {
-  console.log(req.body.text);
+  console.log(req.body);
+  res.send(req.body);
+});
+
+app.get('/converter', jsonParser, (req, res) => {
+  console.log(req.body);
   res.send(req.body);
 });
 
