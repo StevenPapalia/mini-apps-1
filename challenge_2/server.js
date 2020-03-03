@@ -8,11 +8,13 @@ var jsonParser = bodyParser.json();
 
 app.post('/converter', jsonParser, (req, res) => {
   console.log(req.body);
+  console.log('----', res);
   res.send(req.body);
 });
 
 app.get('/converter', jsonParser, (req, res) => {
   console.log(req.body);
+  console.log('----', res);
   res.send(req.body);
 });
 

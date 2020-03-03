@@ -6,15 +6,15 @@ document.getElementById("button").onclick = function sendJSONandGetCSV() {
   var xhr = new XMLHttpRequest();
 
   xhr.open("POST", '../converter', true);
-  xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  xhr.setRequestHeader('Content-Type', 'application/json');
 
-  xhr.send(JSON.stringify(text));
+  xhr.send(text);
 
   xhr.onload = function() {
     if (xhr.status !== 200) { // analyze HTTP status of the response
-      alert(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
+      console.log(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
     } else { // show the result
-      alert(`Done, got ${xhr.response.length}`); // responseText is the server
+      console.log(`Done, got ${xhr.response.length}`); // responseText is the server
     }
   };
 
