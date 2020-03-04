@@ -4,15 +4,12 @@ class App extends React.Component {
   constructor(props) {
     super(props);
   }
+
   render() {
-    return (
-      <div>
-        <div>Hello</div>
-      </div>
-    );
+    return React.createElement("div", null, React.createElement("div", null, "Hello"));
   }
 
-};
+}
 
+;
 export default App;
-
