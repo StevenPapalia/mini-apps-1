@@ -31,12 +31,30 @@ class App extends React.Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
+
     if (this.state.name === "" || this.state.email === "" || this.state.password === "") {
       alert('Please fill out all fields before submitting!')
     } else {
-      alert(`Name: ${this.state.name} Email: ${this.state.email} Password: ${this.state.password}`);
+
+    var params = {
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password
+    };
+
+    $.ajax({
+      type: "POST",
+      url: "/api",
+      data: JSON.stringify(params),
+      contentType: "application/json",
+      success: () => console.log(params),
+      error: (err) => console.log(err)
+    });
+
     }
-    event.preventDefault();
+
+
   }
 
 
