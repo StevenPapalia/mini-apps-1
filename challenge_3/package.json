@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "transpile": "npx babel client --watch --out-dir compiled",
+    "transpile": "npx babel client --watch --out-dir public",
     "start": "nodemon server.js"
   },
   "author": "",
