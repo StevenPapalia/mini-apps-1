@@ -1,4 +1,5 @@
 import React from 'react';
+import Board from './board.jsx'
 
 class App extends React.Component {
   constructor(props) {
@@ -7,7 +8,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>App works</div>
+      <div>
+        Connect 4!
+        <Board />
+      </div>
     );
   }
 }
